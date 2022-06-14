@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Services\SiakadService;
-use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
@@ -16,13 +15,25 @@ class LoginController extends Controller
         $this->siakadService = $siakadService;
     }
 
+    public function showLoginDosen()
+    {
+        return view('login-dosen');
+    }
+
+    public function showLoginMahasiswa()
+    {
+        return view('login-mahasiswa');
+    }
+
     public function loginDosen(Request $request)
     {
         $credential = $request->only('username', 'password');
         try {
             $user_data = $this->siakadService->loginDosen($credential['username'], $credential['password'])['result'][0];
             if ($user_data['stat'] !== "gagal") {
-                $user_data['nama_lengkap'] = "{$user_data['gelardpn']}{$user_data['nama']}{$user_data['gelarblk']}";
+                $gelardpn = $user_data['gelardpn'] ?? '';
+                $gelarblk = $user_data['gelarblk'] ?? '';
+                $user_data['nama_lengkap'] = $gelardpn.$user_data['nama'].$gelarblk;
                 Session::put('login_dosen', true);
                 Session::put('user_data', $user_data);
                 return redirect()->intended('dosen');
@@ -56,6 +67,6 @@ class LoginController extends Controller
         Auth::logout();
         Session::flush();
         Cache::clear();
-        return redirect()->back();
+        return redirect('/');
     }
 }

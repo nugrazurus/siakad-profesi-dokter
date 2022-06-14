@@ -14,15 +14,21 @@ class SiakadService
         $this->client = new $client;
     }
 
-    public function getMakulDosen($iddosen)
+    public function getMakulDosen($iddosen, $idperiode)
     {
-        $response = $this->client->get("{$this->dpna_url}/getjadwalmkbydosen/$iddosen");
+        $response = $this->client->get("{$this->dpna_url}/getjadwalmkbydosen/$iddosen/$idperiode");
         return json_decode($response->getBody(), true);
     }
 
     public function getMhsMakul($idjadwal)
     {
         $response = $this->client->get("{$this->dpna_url}/getmhsmkperprogdi/$idjadwal");
+        return json_decode($response->getBody(), true);
+    }
+
+    public function getDosenMkPerProgdi($idjadwal, $idperiode)
+    {
+        $response = $this->client->get("{$this->dpna_url}/getdosenmkperprogdi/$idjadwal/$idperiode");
         return json_decode($response->getBody(), true);
     }
 
