@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+.bg-login{
+    background: url('/img/background2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.coklat{
+    color: #67412B;
+}
+
+.title h1{
+    font-size: 60px;
+}
+.title h6{
+    font-size: 18px;
+}
+@media(max-width:768px){
+    .title h1{
+        font-size: 40px;
+    }
+    .title h6{
+        font-size: 14px;
+    }
+}
+.btn-login{
+    background-color: #67412B;
+    color: white;
+    border: 1px solid #67412B;
+    border-radius: 8px;
+}
+.btn-login:hover{
+    background-color: transparent;
+    color: #67412B;
+    border: 1px solid #67412B;
+    border-radius: 8px;
+}
+.kembali{
+    transition: all 1s;
+}
+.kembali:hover{
+    transition: all 1s;
+    transform: translateX(-20px);
+}
+
+

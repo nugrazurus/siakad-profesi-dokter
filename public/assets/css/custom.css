@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body,h1,h2,h3,h4,h5,h6,p,a{
+ font-family: 'Poppins', sans-serif!important
+}
+.content-wrapper{
+    padding: 0.4rem 1.7rem;
+}
+.navbar{
+    background: linear-gradient(125deg, #E8B66A, #F2D09E);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.navbar .navbar-brand-wrapper{
+    width: 280px;
+}
+.navbar .navbar-menu-wrapper{
+    width: calc(100% - 280px);
+}
+.sidebar{
+    width: 280px;
+}
+/* .content-wrapper{
+    width: calc(100% - 280px);
+    margin-left: 280px;
+} */
+body:not(.sidebar-icon-only) .nav-item{
+    margin: 5px 25px 5px 25px;
+}
+.nav-item.active{
+    border-radius: 8px;
+    background-color: #EABA71;
+}
+.nav-item.active .nav-link{
+    border-radius: 8px;
+    color: white!important;
+}
+.nav-item:not(.logout):hover{
+    border-radius: 8px;
+    background-color: transparent!important;
+    color: #EABA71;
+}
+.nav-item:hover .nav-link{
+    background-color: transparent!important;
+    border-radius: 8px;
+    color: #EABA71!important;
+}
+.nav-item.active:hover{
+    background-color: #EABA71!important;
+    color: white!important;
+    border-radius: 8px;
+}
+.nav-item.active .nav-link:hover{
+    background-color: #EABA71!important;
+    color: white!important;
+    border-radius: 8px;
+}
+
+.text-orange{
+    color: #EABA71;
+}
+.bg-card{
+    background-image: url('/img/bg-card.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.btn-input-syarat{
+    background-color: #9694EF;
+    color: white;
+    border: 1px solid #9694EF;
+}
+.btn-input-syarat:hover{
+    background-color: #716fc9;
+    color: white;
+    border: 1px solid #716fc9;
+}
+.btn-logout{
+    background-color: transparent;
+    color: #F4A391!important;
+    border: 1px solid #F4A391;
+    border-radius: 8px;
+}
+.btn-logout:hover{
+    background-color: #F4A391!important;
+    color: white!important;
+    border: 1px solid #F4A391!important;
+}
+.nav-item.logout:hover{
+    background-color: #F4A391!important;
+    border: 1px solid #F4A391!important;
+    border-radius: 8px;
+}
+.nav-item.logout:hover .nav-link{
+    color: white!important;
+}
+.kotak1{
+    width: 20px;
+    height: 20px;
+    background-color: #F0A5A5;
+}
+.kotak2{
+    width: 20px;
+    height: 20px;
+    background-color: #F3DDB1;
+}
+.kotak3{
+    width: 20px;
+    height: 20px;
+    background-color: #F0EDAB;
+}
+.kotak4{
+    width: 20px;
+    height: 20px;
+    background-color: #B490EF;
+}
+.btn-orange{
+    background-color: #EABA71;
+    color: white;
+    border: 1px solid #EABA71;
+    border-radius: 8px;
+}
+.btn-orange:hover{
+    background-color: #d18776;
+    color: white;
+    border: 1px solid #d18776;
+    border-radius: 8px;
+}
+

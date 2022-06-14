@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+html,body{
+    overflow: hidden;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background-image: url('/img/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#logo{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+footer{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+.coklat{
+    color: #67412B;
+}
+
+.title h1{
+    font-size: 60px;
+}
+.title h6{
+    font-size: 18px;
+}
+@media(max-width:768px){
+    .title h1{
+        font-size: 40px;
+    }
+    .title h6{
+        font-size: 14px;
+    }
+}
+.btn-login{
+    background-color: #67412B;
+    color: white;
+    border: 1px solid #67412B;
+    border-radius: 8px;
+}
+.btn-login:hover{
+    background-color: transparent;
+    color: #67412B;
+    border: 1px solid #67412B;
+    border-radius: 8px;
+}
+.btn-login-mhs{
+    background-color: #9d6748;
+    color: white;
+    border: 1px solid #9d6748;
+    border-radius: 8px;
+}
+.btn-login-mhs:hover{
+    background-color: transparent;
+    color: #9d6748;
+    border: 1px solid #9d6748;
+    border-radius: 8px;
+}
+
+
