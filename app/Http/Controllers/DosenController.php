@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Services\SiakadService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class DosenController extends Controller
 {
     public function __construct(SiakadService $siakadService)
     {
         $this->siakadService = $siakadService;
+        $this->user = session()->get('user_data');
+        $this->makulProfesi = $this->siakadService->getDosenMkPerProgdi(391, 377);
     }
 
     public function index()
@@ -19,11 +22,16 @@ class DosenController extends Controller
 
     public function entriNilai()
     {
-        return view('dosen.entri-nilai');
+        $user = $this->user;
+        $makul_profesi = collect($this->makulProfesi)->where('iddosen', $user['iddosen']);
+        return view('dosen.entri-nilai', compact('makul_profesi'));
     }
 
-    public function detailEntriNilai()
+    public function detailEntriNilai($idjadwal)
     {
-        return view('dosen.detail-entri-nilai');
+        $idjadwal = base64_decode($idjadwal);
+        $mahasiswa = $this->siakadService->getMhsMakul($idjadwal);
+        return view('dosen.entri-nilai-detail', compact('mahasiswa'));
     }
+
 }

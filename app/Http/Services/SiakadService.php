@@ -26,9 +26,9 @@ class SiakadService
         return json_decode($response->getBody(), true);
     }
 
-    public function getDosenMkPerProgdi($idjadwal, $idperiode)
+    public function getDosenMkPerProgdi($idprogdi, $idperiode)
     {
-        $response = $this->client->get("{$this->dpna_url}/getdosenmkperprogdi/$idjadwal/$idperiode");
+        $response = $this->client->get("{$this->dpna_url}/getdosenmkperprogdi/$idprogdi/$idperiode");
         return json_decode($response->getBody(), true);
     }
 

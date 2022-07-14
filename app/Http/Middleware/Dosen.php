@@ -16,7 +16,7 @@ class Dosen
      */
     public function handle(Request $request, Closure $next)
     {
-        if (isset(session()->get('user_data')['login_dosen'])) {
+        if (session()->get('login_dosen') == true) {
             return $next($request);
         }
         return redirect()->route('get.login-dosen');
