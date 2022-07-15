@@ -3,7 +3,7 @@
         <div class="d-flex flex-column ">
             <p class="pl-4 mt-4" style="color: #bcbcbc">Menu</p>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('dosen') }}">
+                <a class="nav-link" href="{{ route('dosen.dashboard') }}">
                     <iconify-icon data-icon="fluent:rocket-16-regular" style="font-size: 25px" class="menu-icon mr-2">
                     </iconify-icon>
                     <span class="menu-title">Home</span>

@@ -15,6 +15,11 @@ class CreateNilaiStasesTable extends Migration
     {
         Schema::create('nilai_stases', function (Blueprint $table) {
             $table->id();
+            $table->string('nim');
+            $table->string('nilai_huruf', 2);
+            $table->float('nilai_angka')->nullable();
+            $table->string('store_by');
+            $table->boolean('published')->default(0);
             $table->timestamps();
         });
     }

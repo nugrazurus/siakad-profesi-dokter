@@ -30,7 +30,7 @@ class DosenController extends Controller
     public function detailEntriNilai($idjadwal)
     {
         $idjadwal = base64_decode($idjadwal);
-        $mahasiswa = $this->siakadService->getMhsMakul($idjadwal);
+        return $mahasiswa = $this->siakadService->getMhsMakul($idjadwal);
         return view('dosen.entri-nilai-detail', compact('mahasiswa'));
     }
 
