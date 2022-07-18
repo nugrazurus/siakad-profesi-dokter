@@ -23,12 +23,11 @@ public function show($id)
 
     public function store(Request $request)
     {
-        $request->validate([
+        $data = $request->validate([
             'nim' => 'required|string',
             'nilai_huruf' => 'string',
             'nilai_angka' => 'numeric',
         ]);
-        $data = $request->all();
         $data['store_by'] = session()->get('user_data')['nip'];
         $create = $this->model->create($data);
         return response()->json([
@@ -40,13 +39,13 @@ public function show($id)
 
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $data = $request->validate([
             'nim' => 'required|string',
             'nilai_huruf' => 'string',
             'nilai_angka' => 'numeric',
         ]);
-        $data = $this->model->findOrFail($id);
-        $data->update($request->all());
+        $nilai = $this->model->findOrFail($id);
+        $nilai->update($data);
         return response()->json([
             'success' => true,
             'message' => 'Berhasil memperbaharui data',
@@ -56,8 +55,8 @@ public function show($id)
 
     public function destroy($id)
     {
-        $data = $this->model->findOrFail($id);
-        $data->delete();
+        $nilai = $this->model->findOrFail($id);
+        $nilai->delete();
         return response()->json([
             'success' => true,
             'message' => 'Data berhasil dihapus',

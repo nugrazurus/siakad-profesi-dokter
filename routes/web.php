@@ -37,6 +37,10 @@ Route::prefix('dosen')->middleware('login.dosen')->name('dosen.')->group(functio
         Route::put('/{id}', 'NilaiStaseController@update')->name('update');
         Route::delete('/{id}', 'NilaiStaseController@destroy')->name('destroy');
     });
+
+    Route::prefix('datatable')->name('datatable.')->group(function () {
+        Route::get('/mahasiswa/{id}', 'DataTablesController@mahasiswa')->name('mahasiswa');
+    });
 });
 Route::prefix('mahasiswa')->middleware('login.mahasiswa')->name('mahasiswa')->group(function () {
 });
